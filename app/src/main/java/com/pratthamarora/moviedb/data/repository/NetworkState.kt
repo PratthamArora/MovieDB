@@ -1,4 +1,4 @@
-package com.oxcoding.moviemvvm.data.repository
+package com.pratthamarora.moviedb.data.repository
 
 enum class Status {
     RUNNING,

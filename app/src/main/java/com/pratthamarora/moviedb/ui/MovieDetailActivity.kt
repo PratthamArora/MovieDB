@@ -32,7 +32,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
         val movieId: Int = 299534
 
-        val apiService : GetMovieDetails = MovieDbClient.getClient()
+        val apiService: GetMovieDetails = MovieDbClient.getClient()
         movieRepository = MovieDetailsRepository(apiService)
 
         viewModel = getViewModel(movieId)
@@ -49,7 +49,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
     }
 
-    private fun setData(it: MovieDetails){
+    private fun setData(it: MovieDetails) {
         movie_title.text = it.title
         movie_tagline.text = it.tagline
         movie_release_date.text = it.releaseDate
@@ -69,10 +69,10 @@ class MovieDetailActivity : AppCompatActivity() {
     }
 
 
-    private fun getViewModel(movieId:Int): MovieDetailViewModel {
+    private fun getViewModel(movieId: Int): MovieDetailViewModel {
         return ViewModelProvider(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return MovieDetailViewModel(movieRepository,movieId) as T
+                return MovieDetailViewModel(movieRepository, movieId) as T
             }
         })[MovieDetailViewModel::class.java]
     }

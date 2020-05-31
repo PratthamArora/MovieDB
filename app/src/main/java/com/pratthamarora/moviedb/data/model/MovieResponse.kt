@@ -1,4 +1,4 @@
-package com.oxcoding.moviemvvm.data.vo
+package com.pratthamarora.moviedb.data.model
 
 
 import com.google.gson.annotations.SerializedName

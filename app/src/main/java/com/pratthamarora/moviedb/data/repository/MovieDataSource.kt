@@ -1,11 +1,11 @@
-package com.oxcoding.moviemvvm.data.repository
+package com.pratthamarora.moviedb.data.repository
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
-import com.oxcoding.moviemvvm.data.vo.Movie
 import com.pratthamarora.moviedb.data.api.FIRST_PAGE
 import com.pratthamarora.moviedb.data.api.GetMovieDetails
+import com.pratthamarora.moviedb.data.model.Movie
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 

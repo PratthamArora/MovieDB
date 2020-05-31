@@ -1,20 +1,23 @@
 package com.pratthamarora.moviedb.data.repository
 
-import com.pratthamarora.moviedb.data.model.MovieDetails
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.pratthamarora.moviedb.data.api.GetMovieDetails
+import com.pratthamarora.moviedb.data.model.MovieDetails
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class MovieDetailsDataSource (private val apiService : GetMovieDetails, private val compositeDisposable: CompositeDisposable) {
+class MovieDetailsDataSource(
+    private val apiService: GetMovieDetails,
+    private val compositeDisposable: CompositeDisposable
+) {
 
-    private val _networkState  = MutableLiveData<NetworkState>()
+    private val _networkState = MutableLiveData<NetworkState>()
     val networkState: LiveData<NetworkState>
         get() = _networkState
 
-    private val _downloadedMovieDetailsResponse =  MutableLiveData<MovieDetails>()
+    private val _downloadedMovieDetailsResponse = MutableLiveData<MovieDetails>()
     val downloadedMovieResponse: LiveData<MovieDetails>
         get() = _downloadedMovieDetailsResponse
 
@@ -38,9 +41,8 @@ class MovieDetailsDataSource (private val apiService : GetMovieDetails, private 
                     )
             )
 
-        }
-        catch (e: Exception){
-            Log.e("MovieDetailsDataSource",e.message)
+        } catch (e: Exception) {
+            Log.e("MovieDetailsDataSource", e.message)
         }
 
     }

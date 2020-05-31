@@ -6,13 +6,16 @@ import com.pratthamarora.moviedb.data.model.MovieDetails
 import io.reactivex.disposables.CompositeDisposable
 
 
-class MovieDetailsRepository (private val apiService : GetMovieDetails) {
+class MovieDetailsRepository(private val apiService: GetMovieDetails) {
 
     lateinit var movieDetailsDataSource: MovieDetailsDataSource
 
-    fun fetchSingleMovieDetails (compositeDisposable: CompositeDisposable, movieId: Int) : LiveData<MovieDetails> {
+    fun fetchSingleMovieDetails(
+        compositeDisposable: CompositeDisposable,
+        movieId: Int
+    ): LiveData<MovieDetails> {
 
-        movieDetailsDataSource = MovieDetailsDataSource(apiService,compositeDisposable)
+        movieDetailsDataSource = MovieDetailsDataSource(apiService, compositeDisposable)
         movieDetailsDataSource.fetchMovieDetails(movieId)
 
         return movieDetailsDataSource.downloadedMovieResponse

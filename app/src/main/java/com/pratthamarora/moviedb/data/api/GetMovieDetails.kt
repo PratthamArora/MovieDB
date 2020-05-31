@@ -1,6 +1,6 @@
 package com.pratthamarora.moviedb.data.api
 
-import com.oxcoding.moviemvvm.data.vo.MovieResponse
+import com.pratthamarora.moviedb.data.model.MovieResponse
 import com.pratthamarora.moviedb.data.model.MovieDetails
 import io.reactivex.Single
 import retrofit2.http.GET
