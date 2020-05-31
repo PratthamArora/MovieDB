@@ -30,7 +30,7 @@ class MovieDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
 
-        val movieId: Int = 299534
+        val movieId: Int = intent.getIntExtra("id",1)
 
         val apiService: GetMovieDetails = MovieDbClient.getClient()
         movieRepository = MovieDetailsRepository(apiService)
@@ -65,6 +65,7 @@ class MovieDetailActivity : AppCompatActivity() {
         Glide.with(this)
             .load(moviePosterURL)
             .into(iv_movie_poster)
+
 
     }
 

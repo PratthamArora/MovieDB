@@ -18,7 +18,7 @@ class MoviePagedListRepository(private val apiService: GetMovieDetails) {
         moviesDataSourceFactory = MovieDataSourceFactory(apiService, compositeDisposable)
 
         val config = PagedList.Config.Builder()
-            .setEnablePlaceholders(false)
+            .setEnablePlaceholders(true)
             .setPageSize(POST_PER_PAGE)
             .build()
 

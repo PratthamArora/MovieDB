@@ -23,7 +23,7 @@ class PopularMoviePagedListAdapter(private val context: Context) :
         MovieDiffCallback()
     ) {
 
-    private val MOVIE_VIEW_TYPE = 1
+    internal val MOVIE_VIEW_TYPE = 1
     private val NETWORK_VIEW_TYPE = 2
 
     private var networkState: NetworkState? = null
