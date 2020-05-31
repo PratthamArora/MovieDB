@@ -1,4 +1,4 @@
-package com.pratthamarora.moviedb.ui
+package com.pratthamarora.moviedb.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
